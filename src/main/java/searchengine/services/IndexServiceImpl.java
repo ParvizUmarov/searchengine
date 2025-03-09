@@ -29,6 +29,7 @@ public class IndexServiceImpl implements IndexService{
 
     @Override
     public IndexResponse addIndexPage(String url) {
+        log.info("call addIndexPage: url={}", url);
         return null;
     }
 }
