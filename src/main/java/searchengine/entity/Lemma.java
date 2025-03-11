@@ -17,7 +17,7 @@ public class Lemma {
     @JoinColumn(name = "site_id", nullable = false)
     private Site site;
 
-    @Column(nullable = false)
+    @Column(columnDefinition = "VARCHAR(255)", nullable = false)
     private String lemma;
 
     @Column(nullable = false)

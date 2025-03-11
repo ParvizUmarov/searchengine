@@ -13,19 +13,19 @@ public class Site {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false)
-    private Status status;
+    @Column(columnDefinition = "ENUM('INDEXING', 'INDEXED', ''FAILED'')", nullable = false)
+    private String status;
 
     @Column(nullable = false)
     private Date date;
 
-    @Column(name = "last_error")
+    @Column(columnDefinition = "TEXT", name = "last_error")
     private String lastError;
 
-    @Column(nullable = false)
+    @Column(columnDefinition = "VARCHAR(255)", nullable = false)
     private String url;
 
-    @Column(nullable = false)
+    @Column(columnDefinition = "VARCHAR(255)", nullable = false)
     private String name;
 
 }

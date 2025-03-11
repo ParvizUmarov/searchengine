@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "index")
+@Table(name = "search_index")
 public class Index {
 
     @Id
@@ -22,6 +22,6 @@ public class Index {
     private Site site;
 
     @Column(nullable = false)
-    private Float rank;
+    private Float ranking;
 
 }

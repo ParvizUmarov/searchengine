@@ -18,13 +18,13 @@ public class Page {
     @JoinColumn(name = "site_id", nullable = false)
     private Site site;
 
-    @Column(nullable = false)
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String path;
 
     @Column(nullable = false)
     private Integer code;
 
-    @Column(nullable = false)
+    @Column(columnDefinition = "MEDIUMTEXT", nullable = false)
     private String content;
 
 }
