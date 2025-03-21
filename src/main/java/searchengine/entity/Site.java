@@ -1,11 +1,18 @@
 package searchengine.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Table(name = "site")
 public class Site {
 
@@ -13,8 +20,9 @@ public class Site {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(columnDefinition = "ENUM('INDEXING', 'INDEXED', ''FAILED'')", nullable = false)
-    private String status;
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     @Column(nullable = false)
     private Date date;

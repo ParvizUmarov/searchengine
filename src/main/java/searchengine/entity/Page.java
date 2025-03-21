@@ -7,7 +7,7 @@ import javax.persistence.Index;
 
 @Data
 @Entity
-@Table(name = "page", indexes = @Index(columnList = "path", name = "p_index"))
+@Table(name = "page", indexes = {@Index(columnList = "path", name = "p_index", unique = true)})
 public class Page {
 
     @Id
@@ -18,7 +18,7 @@ public class Page {
     @JoinColumn(name = "site_id", nullable = false)
     private Site site;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
+    @Column(columnDefinition = "TEXT", nullable = false, name = "path")
     private String path;
 
     @Column(nullable = false)

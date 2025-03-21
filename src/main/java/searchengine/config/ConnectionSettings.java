@@ -5,12 +5,13 @@ import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
-@Getter
 @Setter
+@Getter
 @Component
-@ConfigurationProperties(prefix = "indexing-settings")
-public class SitesList {
-    private List<SiteInfo> sites;
+@ConfigurationProperties(prefix = "connecting-settings")
+public class ConnectionSettings {
+
+    private String userAgent;
+    private String referrer;
+
 }
