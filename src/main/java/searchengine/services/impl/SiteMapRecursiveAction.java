@@ -1,8 +1,9 @@
-package searchengine.services;
+package searchengine.services.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import searchengine.dto.model.SiteMap;
+import searchengine.services.ParserService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,12 +23,12 @@ public class SiteMapRecursiveAction extends RecursiveAction {
     protected void compute() {
         linksPool.add(siteMap.getUrl());
 
-        ConcurrentSkipListSet<String> links = parserService.getLinks(siteMap.getUrl(), mainDomain);
+        var links = parserService.getLinks(siteMap.getUrl(), mainDomain);
+
         for (String link : links) {
             if (!linksPool.contains(link)) {
                 linksPool.add(link);
                 siteMap.addChildren(new SiteMap(link));
-
             }
         }
 

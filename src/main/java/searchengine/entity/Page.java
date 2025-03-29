@@ -1,9 +1,9 @@
 package searchengine.entity;
 
-import lombok.*;
+import lombok.Data;
 
-import javax.persistence.*;
 import javax.persistence.Index;
+import javax.persistence.*;
 
 @Data
 @Entity

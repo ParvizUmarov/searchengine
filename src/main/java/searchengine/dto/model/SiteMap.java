@@ -1,7 +1,6 @@
 package searchengine.dto.model;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 

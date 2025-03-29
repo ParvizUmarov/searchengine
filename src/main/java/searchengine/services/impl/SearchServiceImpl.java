@@ -1,15 +1,16 @@
-package searchengine.services;
+package searchengine.services.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import searchengine.dto.model.SearchRequest;
 import searchengine.exception.CustomException;
+import searchengine.services.SearchService;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class SearchServiceImpl implements SearchService{
+public class SearchServiceImpl implements SearchService {
 
     @Override
     public Object search(SearchRequest request) {

@@ -1,6 +1,8 @@
 package searchengine.services;
 
+import searchengine.dto.model.SiteProvideDetailInfo;
+
 public interface ParseCallback {
 
-    void provideSiteInfo(String url, String mainDomain, String body);
+    void provideSiteInfo(SiteProvideDetailInfo detailInfo);
 }

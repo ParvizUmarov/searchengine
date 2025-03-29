@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import searchengine.dto.model.IndexResponse;
 import searchengine.dto.model.SearchRequest;
 import searchengine.dto.statistics.StatisticsResponse;
-import searchengine.services.IndexService;
+import searchengine.services.ManagementService;
 import searchengine.services.SearchService;
 import searchengine.services.StatisticsService;
 
@@ -20,7 +20,7 @@ import searchengine.services.StatisticsService;
 public class ApiController {
 
     private final StatisticsService statisticsService;
-    private final IndexService indexService;
+    private final ManagementService managementService;
     private final SearchService searchService;
 
     @GetMapping("/statistics")
@@ -30,17 +30,17 @@ public class ApiController {
 
     @GetMapping("/startIndexing")
     public ResponseEntity<IndexResponse> startIndexing() {
-        return ResponseEntity.ok(indexService.startIndexing());
+        return ResponseEntity.ok(managementService.startIndexing());
     }
 
     @GetMapping("/stopIndexing")
     public ResponseEntity<IndexResponse> stopIndexing() {
-        return ResponseEntity.ok(indexService.stopIndexing());
+        return ResponseEntity.ok(managementService.stopIndexing());
     }
 
     @PostMapping("/indexPage")
     public ResponseEntity<IndexResponse> addIndexPage(@Param("url") String url){
-        return ResponseEntity.ok(indexService.addIndexPage(url));
+        return ResponseEntity.ok(managementService.addIndexPage(url));
     }
 
     @GetMapping("/search")
